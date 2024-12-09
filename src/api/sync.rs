@@ -146,6 +146,18 @@ impl ApiBuilder {
         self
     }
 
+    /// Sets the endpint to be used in the API
+    pub fn with_endpoint(mut self, endpoint: String) -> Self {
+        self.endpoint = endpoint;
+        self
+    }
+
+    /// Sets the url_template to be used in the API
+    pub fn with_url_template(mut self, url_template: String) -> Self {
+        self.url_template = url_template;
+        self
+    }
+
     fn build_headers(&self) -> HeaderMap {
         let mut headers = HeaderMap::new();
         let user_agent = format!("unkown/None; {NAME}/{VERSION}; rust/unknown");
